@@ -1,0 +1,1397 @@
+/*// bower:scss
+// endbower*/
+@font-face {
+  font-family: "extrathin";
+  src: local("myriad-set-pro_extrathin"), url("../fonts/myriad-set-pro_extrathin.woff") format("woff"), url("../fonts/myriad-set-pro_extrathin.eot") format("eot"), url("../fonts/myriad-set-pro_extrathin.ttf") format("ttfttf"), url("../fonts/myriad-set-pro_extrathin.svg") format("svg");
+}
+
+@font-face {
+  font-family: "bold";
+  src: local("myriad-set-pro_semibold"), url("../fonts/myriad-set-pro_semibold.woff") format("woff"), url("../fonts/myriad-set-pro_semibold.eot") format("eot"), url("../fonts/myriad-set-pro_semibold.ttf") format("ttfttf"), url("../fonts/myriad-set-pro_semibold.svg") format("svg");
+}
+
+@font-face {
+  font-family: "normal";
+  src: local("myriad-set-pro_text"), url("../fonts/myriad-set-pro_text.woff") format("woff"), url("../fonts/myriad-set-pro_text.eot") format("eot"), url("../fonts/myriad-set-pro_text.ttf") format("ttfttf"), url("../fonts/myriad-set-pro_text.svg") format("svg");
+}
+
+@font-face {
+  font-family: "thin";
+  src: local("myriad-set-pro_thin"), url("../fonts/myriad-set-pro_thin.woff") format("woff"), url("../fonts/myriad-set-pro_thin.eot") format("eot"), url("../fonts/myriad-set-pro_thin.ttf") format("ttfttf"), url("../fonts/myriad-set-pro_thin.svg") format("svg");
+}
+
+@font-face {
+  font-family: "iconfont text";
+  src: local("appleicons_text"), url("../fonts/appleicons_text.woff") format("woff"), url("../fonts/appleicons_text.eot") format("eot"), url("../fonts/appleicons_text.ttf") format("ttfttf"), url("../fonts/appleicons_text.svg") format("svg");
+}
+
+@font-face {
+  font-family: "iconfont thin";
+  src: local("appleicons_thin"), url("../fonts/appleicons_thin.woff") format("woff"), url("../fonts/appleicons_thin.eot") format("eot"), url("../fonts/appleicons_thin.ttf") format("ttfttf"), url("../fonts/appleicons_thin.svg") format("svg");
+}
+
+body, ul, li, h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'myriad normal',sans-serif;
+  font-size: 16px;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.large-1, .large-2, .large-3, .large-4, .large-5, .large-6, .large-7, .large-8, .large-9, .large-10, .large-11, .large-12, .medium-1, .medium-2, .medium-3, .medium-4, .medium-5, .medium-6, .medium-7, .medium-8, .medium-9, .medium-10, .medium-11, .medium-12, .small-1, .small-2, .small-3, .small-4, .small-5, .small-6, .small-7, .small-8, .small-9, .small-10, .small-11, .small-12 {
+  position: relative;
+  float: left;
+}
+
+#globalnav .gn-list::after, .aside::after, #footer .footer-inner::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+@media screen and (max-width: 1680px) {
+  .large-1 {
+    width: 8.33333%;
+  }
+  .large-2 {
+    width: 16.66667%;
+  }
+  .large-3 {
+    width: 25%;
+  }
+  .large-4 {
+    width: 33.33333%;
+  }
+  .large-5 {
+    width: 41.66667%;
+  }
+  .large-6 {
+    width: 50%;
+  }
+  .large-7 {
+    width: 58.33333%;
+  }
+  .large-8 {
+    width: 66.66667%;
+  }
+  .large-9 {
+    width: 75%;
+  }
+  .large-10 {
+    width: 83.33333%;
+  }
+  .large-11 {
+    width: 91.66667%;
+  }
+  .large-12 {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1068px) {
+  .medium-1 {
+    width: 8.33333%;
+  }
+  .medium-2 {
+    width: 16.66667%;
+  }
+  .medium-3 {
+    width: 25%;
+  }
+  .medium-4 {
+    width: 33.33333%;
+  }
+  .medium-5 {
+    width: 41.66667%;
+  }
+  .medium-6 {
+    width: 50%;
+  }
+  .medium-7 {
+    width: 58.33333%;
+  }
+  .medium-8 {
+    width: 66.66667%;
+  }
+  .medium-9 {
+    width: 75%;
+  }
+  .medium-10 {
+    width: 83.33333%;
+  }
+  .medium-11 {
+    width: 91.66667%;
+  }
+  .medium-12 {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 735px) {
+  .small-1 {
+    width: 8.33333%;
+  }
+  .small-2 {
+    width: 16.66667%;
+  }
+  .small-3 {
+    width: 25%;
+  }
+  .small-4 {
+    width: 33.33333%;
+  }
+  .small-5 {
+    width: 41.66667%;
+  }
+  .small-6 {
+    width: 50%;
+  }
+  .small-7 {
+    width: 58.33333%;
+  }
+  .small-8 {
+    width: 66.66667%;
+  }
+  .small-9 {
+    width: 75%;
+  }
+  .small-10 {
+    width: 83.33333%;
+  }
+  .small-11 {
+    width: 91.66667%;
+  }
+  .small-12 {
+    width: 100%;
+  }
+}
+
+.with-5-col .col {
+  width: 20%;
+}
+
+.with-6-col .col {
+  width: 16.66667%;
+}
+
+.with-7-col .col {
+  width: 14.28571%;
+}
+
+.with-8-col .col {
+  width: 12.5%;
+}
+
+.with-9-col .col {
+  width: 11.11111%;
+}
+
+.with-10-col .col {
+  width: 10%;
+}
+
+@media screen and (max-width: 735px) {
+  .with-5-col .col {
+    width: 100%;
+  }
+  .with-6-col .col {
+    width: 100%;
+  }
+  .with-7-col .col {
+    width: 100%;
+  }
+  .with-8-col .col {
+    width: 100%;
+  }
+  .with-9-col .col {
+    width: 100%;
+  }
+  .with-10-col .col {
+    width: 100%;
+  }
+}
+
+/*
+@mixin onsmall{
+  @media screen and(max-width: $small){
+    @content;
+  }
+}*/
+#globalnav .gn-list .gn-item span, .aside span {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.data-ac-next, .data-ac-pre {
+  position: absolute;
+  text-align: center;
+  overflow: hidden;
+  color: #666;
+  border-radius: 5px;
+  display: block;
+  font-size: 100px;
+  font-style: thin;
+  font-weight: 1;
+  line-height: 228px;
+  margin-top: -94px;
+  top: 50%;
+  width: 67px;
+  height: 228px;
+  cursor: pointer;
+}
+
+#globalnav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 44px;
+  background: #000;
+}
+
+#globalnav .gn-content {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 22px;
+}
+
+#globalnav .gn-list {
+  height: 44px;
+  text-align: justify;
+}
+
+#globalnav .gn-list::after {
+  content: '';
+  width: 100%;
+  display: inline-block;
+}
+
+#globalnav .gn-list .gn-item {
+  height: 44px;
+  display: inline-block;
+}
+
+#globalnav .gn-link {
+  padding: 0 10px;
+  height: 44px;
+  display: block;
+}
+
+#globalnav .gn-logo a {
+  width: 20px;
+  background: url("../images/logo.svg") center center no-repeat;
+}
+
+#globalnav .gn-mac a {
+  width: 31px;
+  background: url("../images/mac.svg") center center no-repeat;
+}
+
+#globalnav .gn-ipad a {
+  width: 30px;
+  background: url("../images/ipad.svg") center center no-repeat;
+}
+
+#globalnav .gn-iphone a {
+  width: 48px;
+  background: url("../images/iphone.svg") center center no-repeat;
+}
+
+#globalnav .gn-watch a {
+  width: 44px;
+  background: url("../images/watch.svg") center center no-repeat;
+}
+
+#globalnav .gn-tv a {
+  width: 20px;
+  background: url("../images/tv.svg") center center no-repeat;
+}
+
+#globalnav .gn-music a {
+  width: 40px;
+  background: url("../images/music.svg") center center no-repeat;
+}
+
+#globalnav .gn-support a {
+  width: 57px;
+  background: url("../images/support.svg") center center no-repeat;
+}
+
+#globalnav .gn-search a {
+  width: 20px;
+  background: url("../images/search.svg") center center no-repeat;
+}
+
+#globalnav .gn-shopping a {
+  width: 18px;
+  background: url("../images/shopping.svg") center center no-repeat;
+}
+
+#globalnav .gn-header {
+  position: relative;
+  display: none;
+  height: 48px;
+}
+
+@media screen and (max-width: 735px) {
+  #globalnav .gn-header {
+    display: block;
+  }
+}
+
+#globalnav .gn-header .gn-item {
+  width: 48px;
+  height: 48px;
+}
+
+#globalnav .gn-header .gn-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#globalnav .gn-header .gn-button label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 48px;
+  width: 48px;
+}
+
+#globalnav .gn-header .gn-apple {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: url(/images/apple1.svg) center center no-repeat;
+}
+
+#globalnav .gn-header .gn-bag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: url(/images/shopping1.svg) center center no-repeat;
+}
+
+@media screen and (max-width: 735px) {
+  #globalnav .gn-list {
+    position: absolute;
+    top: 68px;
+    width: 100%;
+    left: 0;
+    box-sizing: border-box;
+    height: auto;
+    padding: 0 78px;
+    visibility: hidden;
+    background: #000;
+    z-index: 10000000000;
+  }
+  #globalnav .gn-list .gn-item {
+    /*display: inline-block;*/
+    transition: transform .3s ease;
+    /* @include onsmall{*/
+    display: block;
+    border-bottom: 1px solid #fff;
+    transform: scale(1.2, 1.2) translateY(-18px);
+    opacity: 0;
+  }
+}
+
+.gn-header .ac-gn {
+  transform: rotate(0);
+  z-index: 2000000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 48px;
+}
+
+.gn-header .ac-gn .shang {
+  display: block;
+  width: 17px;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  left: 16px;
+  z-index: 12222222222222;
+  top: 23px;
+  transition: transform 0.2s 0.2s;
+  transform: translateY(-3px);
+}
+
+.gn-header .ac-gn .xia {
+  display: block;
+  width: 17px;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  left: 16px;
+  z-index: 1;
+  bottom: 19px;
+  transition: transform 0.2s;
+  transform: translateY(-3px);
+}
+
+#xiala:checked + .gn-content .gn-button .shang {
+  transform: rotateZ(45deg);
+}
+
+#xiala:checked + .gn-content .gn-button .xia {
+  transform: rotateZ(-45deg);
+}
+
+@media screen and (max-width: 735px) {
+  #xiala:checked ~ #globalnav .gn-content {
+    height: 600px;
+  }
+  #xiala:checked ~ #globalnav .gn-content .gn-list {
+    visibility: visible;
+  }
+  #xiala:checked ~ #globalnav .gn-content .gn-list .gn-item {
+    opacity: 1;
+    transform: translateY(0) scale(1, 1);
+  }
+  #xiala:checked ~ #globalnav .gn-content .gn-list .gn-item:nth-child(1) {
+    transition: transform 0.6s 0.05s ease;
+  }
+  #xiala:checked ~ #globalnav .gn-content .gn-list .gn-item:nth-child(2) {
+    transition: transform 0.6s 0.1s ease;
+  }
+  #xiala:checked ~ #globalnav .gn-content .gn-list .gn-item:nth-child(3) {
+    transition: transform 0.6s 0.15s ease;
+  }
+  #xiala:checked ~ #globalnav .gn-content .gn-list .gn-item:nth-child(4) {
+    transition: transform 0.6s 0.2s ease;
+  }
+  #xiala:checked ~ #globalnav .gn-content .gn-list .gn-item:nth-child(5) {
+    transition: transform 0.6s 0.25s ease;
+  }
+  #xiala:checked ~ #globalnav .gn-content .gn-list .gn-item:nth-child(6) {
+    transition: transform 0.6s 0.3s ease;
+  }
+  #xiala:checked ~ #globalnav .gn-content .gn-list .gn-item:nth-child(7) {
+    transition: transform 0.6s 0.35s ease;
+  }
+  #xiala:checked ~ #globalnav .gn-content .gn-list .gn-item:nth-child(8) {
+    transition: transform 0.6s 0.4s ease;
+  }
+  #xiala:checked ~ #globalnav .gn-content .gn-list .gn-item:nth-child(9) {
+    transition: transform 0.6s 0.45s ease;
+  }
+  #xiala:checked ~ #globalnav .gn-content .gn-list .gn-item:nth-child(10) {
+    transition: transform 0.6s 0.5s ease;
+  }
+}
+
+.hero-gallery {
+  height: 78%;
+  min-height: 650px;
+  position: relative;
+}
+
+.hero-gallery .dotnav {
+  position: absolute;
+  height: 8px;
+  left: 0;
+  bottom: 2%;
+  width: 100%;
+  z-index: 8;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hero-gallery {
+  position: relative;
+}
+
+.baodian {
+  margin-left: -51px;
+  position: absolute;
+  left: 50%;
+  bottom: 4px;
+  cursor: pointer;
+}
+
+.baodian li {
+  background: #999999;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  margin: 0 2px;
+  overflow: hidden;
+  text-align: center;
+  display: inline-block;
+  height: 8px;
+  line-height: 18px;
+  width: 8px;
+  font-size: 0;
+}
+
+.baodian li a {
+  display: block;
+}
+
+.baodian .baodian-item-selected {
+  background: blue;
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  border: 1px solid #08c;
+  cursor: pointer;
+}
+
+.jiantou {
+  display: block;
+}
+
+.data-ac-next {
+  right: 18px;
+}
+
+.data-ac-next::after {
+  content: ">";
+}
+
+.data-ac-pre {
+  left: 18px;
+}
+
+.data-ac-pre::after {
+  content: "<";
+}
+
+.data-ac-pre, .data-ac-next {
+  z-index: 100008;
+}
+
+section:nth-child(1) .product-pro2 {
+  background: url(../images/iphone_se.png) center center no-repeat;
+}
+
+section:nth-child(1) .hero-image-inner2 {
+  background: url(../images/iphone_6s_medium1.jpg) center center no-repeat;
+  background-size: 1310px 541px;
+  background-size: 1310px 541px;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  width: 1310px;
+  height: 541px;
+  overflow: visible;
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: -408px;
+  right: -707px;
+}
+
+section:nth-child(2) .product-pro2 {
+  background: url(../images/ipad_pro_medium.png) center center no-repeat;
+}
+
+section:nth-child(2) .hero-image-inner2 {
+  background: url(../images/ipad_pro_family_medium.jpg) center center no-repeat;
+  background-size: 1310px 541px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  width: 1310px;
+  height: 541px;
+  overflow: visible;
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: -450px;
+  right: -707px;
+}
+
+section:nth-child(3) .product-pro2 {
+  background: url(../images/watch_medium.png) center center no-repeat;
+}
+
+section:nth-child(3) .hero-image-inner2 {
+  background: url(../images/apple_watch_trio_medium.jpg) center center no-repeat;
+  background-size: 671px 341px;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  width: 671px;
+  height: 341px;
+  overflow: visible;
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: -204px;
+  right: -336px;
+}
+
+.hero-gallery-item2 {
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+}
+
+.hero-gallery-item2 .hero-content2 {
+  vertical-align: middle;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  right: auto;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 6;
+}
+
+.hero-gallery-item2 .hero-content2 .backing-link2 {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  right: auto;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 3;
+}
+
+.hero-gallery-item2 .hero-content2 .copy2 {
+  left: 50%;
+  top: auto;
+  vertical-align: bottom;
+  height: 63%;
+  position: absolute;
+  width: 800px;
+  right: auto;
+  bottom: auto;
+  overflow: visible;
+}
+
+.hero-gallery-item2 .hero-content2 .copy2::before2 {
+  content: ' ';
+  display: inline-block;
+  clear: both;
+}
+
+.hero-gallery-item2 .hero-content2 .copy2 .copy-inner2 {
+  padding-bottom: 170px;
+  vertical-align: bottom;
+  top: 100px;
+  left: -50%;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  z-index: 100;
+}
+
+.hero-gallery-item2 .hero-content2 .copy2 .copy-inner2 .product-pro2 {
+  background-size: 139px 37px;
+  height: 37px;
+  width: 139px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.25em;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  background-repeat: no-repeat;
+  font-size: 64px;
+  line-height: 1.0625;
+  font-weight: 200;
+  letter-spacing: -0.02em;
+}
+
+.hero-gallery-item2 .hero-content2 .copy2::after {
+  content: ' ';
+  display: inline-block;
+}
+
+.copy2 .links2 li a, .copy2 .links2 li span {
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.product-text2 {
+  font-size: 32px;
+  line-height: 1.125;
+  font-weight: 400;
+  font-family: 'thin';
+  letter-spacing: normal;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  z-index: 1000;
+}
+
+.copy2 .links2 {
+  font-size: 24px;
+  line-height: 1.3375;
+  font-weight: 300;
+  letter-spacing: normal;
+}
+
+.copy2 .links2 li {
+  display: inline-block;
+  margin-bottom: 0.2em;
+  margin-right: 0.35em;
+  margin-left: 0.35em;
+}
+
+.copy2 .links2 li a {
+  color: #57B0DD;
+  font-size: 24px;
+  line-height: 1.3375;
+  font-weight: 400;
+  letter-spacing: normal;
+  text-align: center;
+  font-family: 'thin';
+}
+
+.copy2 .links2 li span::after {
+  content: '';
+  display: inline-block;
+  clear: both;
+}
+
+.hero-wrapper2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-wrapper2 .hero-image2 {
+  position: absolute;
+  bottom: auto;
+  right: auto;
+  left: 0;
+  top: 0;
+  min-width: 203px;
+  min-height: 228px;
+  width: 50%;
+  height: 50%;
+}
+
+@media screen and (max-width: 735px) {
+  .ac-gallery2 section:nth-child(1) .product-pro2 {
+    background: url(../images/iphone_6s_small.png) center center no-repeat;
+  }
+  .ac-gallery2 section:nth-child(1) .hero-image-inner2 {
+    background: url(../images/iphone_6s_small1.jpg) center center no-repeat;
+    background-size: 540px 150px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    width: 540px;
+    height: 150px;
+    overflow: visible;
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: -122px;
+    right: -252px;
+  }
+  .ac-gallery2 section:nth-child(1) .product-text2 {
+    font-size: 20px;
+    line-height: 1.3375;
+    font-weight: 300;
+    letter-spacing: normal;
+  }
+  .ac-gallery2 section:nth-child(2) .product-pro2 {
+    background: url(../images/ipad_pro_small.png) center center no-repeat;
+  }
+  .ac-gallery2 section:nth-child(2) .hero-image-inner2 {
+    background: url(../images/ipad_pro_family_small.jpg) center center no-repeat;
+    background-size: 440px 182px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    width: 440px;
+    height: 182px;
+    overflow: visible;
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: -144px;
+    right: -238px;
+  }
+  .ac-gallery2 section:nth-child(2) .product-text2 {
+    font-size: 20px;
+    line-height: 1.3375;
+    font-weight: 300;
+    letter-spacing: normal;
+  }
+  .ac-gallery2 section:nth-child(3) .product-pro2 {
+    background: url(../images/watch_small.png) center center no-repeat;
+  }
+  .ac-gallery2 section:nth-child(3) .hero-image-inner2 {
+    background: url(../images/apple_watch_trio_small.jpg) center center no-repeat;
+    background-size: 263px 134px;
+    height: 134px;
+    width: 263px;
+    overflow: visible;
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: -94px;
+    right: -132px;
+  }
+  .ac-gallery2 section:nth-child(3) .product-text2 {
+    font-size: 20px;
+    line-height: 1.3375;
+    font-weight: 300;
+    letter-spacing: normal;
+  }
+}
+
+/*.hero-gallery{
+  @media screen and(max-width: $small){
+    min-height:450px;
+  }
+}*/
+#globalnav .gn-list .gn-item span, .aside span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.aside {
+  position: relative;
+}
+
+.aside li {
+  float: left;
+  width: 25%;
+  height: 200px;
+}
+
+@media screen and (max-width: 1068px) {
+  .aside li {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 735px) {
+  .aside li {
+    width: 100%;
+  }
+}
+
+.aside li a {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 200px;
+  background-size: 360px 200px;
+}
+
+@media screen and (max-width: 1068px) {
+  .aside li a {
+    background-size: 640px 200px;
+  }
+}
+
+@media screen and (max-width: 735px) {
+  .aside li a {
+    background-size: 736px 200px;
+  }
+}
+
+.aside li:nth-child(1) a {
+  background: url("../images/iphone_6s_large.jpg") center center no-repeat;
+}
+
+@media screen and (max-width: 1068px) {
+  .aside li:nth-child(1) a {
+    background: url("../images/iphone_6s_medium.jpg") center center no-repeat;
+  }
+}
+
+@media screen and (max-width: 735px) {
+  .aside li:nth-child(1) a {
+    background: url("../images/iphone_6s_small.jpg") center center no-repeat;
+  }
+}
+
+.aside li:nth-child(2) a {
+  background: url("../images/apple_tv_large.jpg") center center no-repeat;
+}
+
+@media screen and (max-width: 1068px) {
+  .aside li:nth-child(2) a {
+    background: url("../images/apple_tv_medium.jpg") center center no-repeat;
+  }
+}
+
+@media screen and (max-width: 735px) {
+  .aside li:nth-child(2) a {
+    background: url("../images/apple_tv_small.jpg") center center no-repeat;
+  }
+}
+
+.aside li:nth-child(3) a {
+  background: url("../images/macbook_large.jpg") center center no-repeat;
+}
+
+@media screen and (max-width: 1068px) {
+  .aside li:nth-child(3) a {
+    background: url("../images/macbook_medium.jpg") center center no-repeat;
+  }
+}
+
+@media screen and (max-width: 735px) {
+  .aside li:nth-child(3) a {
+    background: url("../images/macbook_small.jpg") center center no-repeat;
+  }
+}
+
+.aside li:nth-child(4) a {
+  background: url("../images/accessories_large.jpg") center center no-repeat;
+}
+
+@media screen and (max-width: 1068px) {
+  .aside li:nth-child(4) a {
+    background: url("../images/accessories_medium.jpg") center center no-repeat;
+  }
+}
+
+@media screen and (max-width: 735px) {
+  .aside li:nth-child(4) a {
+    background: url("../images/accessories_small.jpg") center center no-repeat;
+  }
+}
+
+.banner-wrapper {
+  text-align: center;
+}
+
+.banner-wrapper .redcross-banner {
+  position: relative;
+  display: inline-block;
+  padding: 20px 0;
+}
+
+.banner-wrapper .redcross-banner .image-logo {
+  background-repeat: no-repeat;
+  background-size: 179px 44px;
+  height: 44px;
+  width: 179px;
+  background-image: url("../images/redcross_banner_large.jpg");
+  position: absolute;
+  top: 13px;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.banner-wrapper .redcross-banner .image-logo .american {
+  position: absolute;
+  top: 0;
+  left: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+}
+
+.banner-wrapper .redcross-banner .redcross-copy {
+  margin-left: 202px;
+  /*display: inline-block;*/
+  border-left: 1px solid #d6d6d6;
+  padding-left: 22px;
+  font-size: 22px;
+  /*color:#08c;*/
+  font-family: 'thin';
+  /*line-height: 50px;*/
+}
+
+.banner-wrapper .redcross-banner .redcross-copy .help {
+  margin-left: 4px;
+  font-size: 22px;
+  color: #08c;
+  font-family: 'normal';
+}
+
+.banner-wrapper .redcross-banner .redcross-copy .help::after {
+  clear: both;
+  display: block;
+  content: '';
+}
+
+.banner-wrapper {
+  text-align: center;
+}
+
+@media screen and (max-width: 735px) {
+  .banner-wrapper .redcross-banner {
+    position: relative;
+    display: inline-block;
+    padding: 20px 0;
+  }
+  .banner-wrapper .redcross-banner .image-logo {
+    background-repeat: no-repeat;
+    background-size: 179px 44px;
+    height: 44px;
+    width: 179px;
+    background-image: url("../images/redcross_banner_large.jpg");
+    display: block;
+    position: relative;
+    top: auto;
+    transform: none;
+    margin: 0 auto 4px;
+  }
+  .banner-wrapper .redcross-banner .redcross-copy {
+    margin-left: 0;
+    border-left: 0;
+    padding-left: 0;
+    display: block;
+  }
+  .banner-wrapper .redcross-banner .redcross-copy .help {
+    display: block;
+    margin-left: 0;
+  }
+}
+
+#footer {
+  background: #f2f2f2;
+  margin-top: 30px;
+}
+
+#footer .footer-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 22px;
+}
+
+#footer input {
+  display: none;
+}
+
+@media screen and (max-width: 735px) {
+  #footer nav .section ul {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 735px) {
+  #footer nav .section {
+    border-bottom: 1px solid #e3e3e3;
+  }
+}
+
+#footer nav .section h2 {
+  font-family: 'normal';
+  font-size: 14px;
+  position: relative;
+}
+
+@media screen and (max-width: 735px) {
+  #footer nav .section h2 {
+    height: 40px;
+    border-bottom: none;
+    line-height: 40px;
+    font-size: 14px;
+    font-family: 'extrathin';
+  }
+  #footer nav .section h2::after {
+    content: '+';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    bottom: 0;
+  }
+}
+
+.section ul li {
+  font-family: 'thin';
+  font-size: 12px;
+  height: 20px;
+  line-height: 20px;
+}
+
+@media screen and (max-width: 735px) {
+  .section ul li {
+    height: 30px;
+    line-height: 30px;
+  }
+}
+
+@media screen and (max-width: 735px) {
+  #shop {
+    display: none;
+  }
+  #shop:checked + .section ul {
+    display: block;
+  }
+  #shop:checked + .section h2::after {
+    transform: rotateZ(45deg);
+    transition: all .5s ease;
+  }
+  #find {
+    display: none;
+  }
+  #find:checked + .section ul {
+    display: block;
+  }
+  #find:checked + .section h2::after {
+    transform: rotateZ(45deg);
+    transition: all .5s ease;
+  }
+  #education {
+    display: none;
+  }
+  #education:checked + .section ul {
+    display: block;
+  }
+  #education:checked + .section h2::after {
+    transform: rotateZ(45deg);
+    transition: all .5s ease;
+  }
+  #education1 {
+    display: none;
+  }
+  #education1:checked + .section ul {
+    display: block;
+  }
+  #education1:checked + .section h2::after {
+    transform: rotateZ(45deg);
+    transition: all .5s ease;
+  }
+  #manage {
+    display: none;
+  }
+  #manage:checked + .section ul {
+    display: block;
+  }
+  #manage:checked + .section h2::after {
+    transform: rotateZ(45deg);
+    transition: all .5s ease;
+  }
+  #manage1about {
+    display: none;
+  }
+  #manage1about:checked + .section ul {
+    display: block;
+  }
+  #manage1about:checked + .section h2::after {
+    transform: rotateZ(45deg);
+    transition: all .5s ease;
+  }
+}
+
+.with-5-col .col {
+  float: left;
+  position: relative;
+  width: 20%;
+}
+
+.with-6-col .col {
+  float: left;
+  position: relative;
+  width: 16.66667%;
+}
+
+.with-7-col .col {
+  float: left;
+  position: relative;
+  width: 14.28571%;
+}
+
+.with-8-col .col {
+  float: left;
+  position: relative;
+  width: 12.5%;
+}
+
+.with-9-col .col {
+  float: left;
+  position: relative;
+  width: 11.11111%;
+}
+
+.with-10-col .col {
+  float: left;
+  position: relative;
+  width: 10%;
+}
+
+@media screen and (max-width: 735px) {
+  .with-5-col .col {
+    width: 100%;
+  }
+  .with-6-col .col {
+    width: 100%;
+  }
+  .with-7-col .col {
+    width: 100%;
+  }
+  .with-8-col .col {
+    width: 100%;
+  }
+  .with-9-col .col {
+    width: 100%;
+  }
+  .with-10-col .col {
+    width: 100%;
+  }
+}
+
+.ac-fotter {
+  color: #999;
+  padding: 20px 0 24px;
+  width: 980px;
+  margin: 0 auto;
+}
+
+.ac-fotter .ac-fotter-shop {
+  max-height: 9999px;
+  margin-bottom: 6px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #e3e3e3;
+  font-size: 14px;
+  font-family: 'thin';
+}
+
+.ac-fotter .ac-fotter-shop a {
+  color: #08c;
+  font-size: 14px;
+  font-family: 'thin';
+}
+
+.ac-fotter .ac-fotter-shop .wrap {
+  white-space: nowrap;
+  font-size: 14px;
+  font-family: 'thin';
+}
+
+.ac-fotter .ac-fotter-local {
+  float: right;
+  white-space: nowrap;
+}
+
+.ac-fotter .ac-fotter-local .qi {
+  border-left: none;
+  margin-left: 0;
+  padding-left: 0;
+  font-size: 14px;
+  font-family: 'thin';
+  color: #000;
+}
+
+.ac-fotter .ac-fotter-local .qi span {
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url("../images/qi.png");
+  padding-right: 5px;
+  background-position: left center;
+  cursor: pointer;
+  float: left;
+  margin-top: 1px;
+}
+
+.ac-fotter .ac-fotter-legal::after {
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0;
+  pointer-events: auto;
+  letter-spacing: normal;
+}
+
+.ac-fotter .ac-fotter-legal .ac-gf {
+  margin-right: 26px;
+  float: left;
+  font-size: 14px;
+}
+
+.ac-fotter .ac-fotter-legal .jieshu {
+  display: block;
+  float: left;
+}
+
+.ac-fotter .ac-fotter-legal .jieshu a {
+  border-right: 1px solid #d6d6d6;
+  margin-right: 8px;
+  padding-right: 8px;
+  white-space: nowrap;
+  font-size: 14px;
+  font-family: 'thin';
+  color: #000;
+}
+
+.ac-fotter {
+  padding: 0 22px;
+}
+
+@media screen and (max-width: 735px) {
+  .ac-fotter .ac-fotter-shop {
+    border-bottom: none;
+    margin-bottom: 6px;
+  }
+  .ac-fotter .ac-fotter-local {
+    float: none;
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .ac-fotter .ac-fotter-legal {
+    margin-bottom: 3px;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: 'bold';
+  }
+  .ac-fotter .ac-fotter-legal::after {
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+    pointer-events: auto;
+    letter-spacing: normal;
+  }
+  .ac-fotter .ac-fotter-legal .ac-gf {
+    display: block;
+    float: none;
+  }
+  .ac-fotter .ac-fotter-legal .jieshu {
+    display: block;
+  }
+  .ac-fotter .ac-fotter-legal .jieshu a {
+    font-family: 'thin';
+  }
+}

@@ -1,0 +1,1045 @@
+/*// bower:scss
+// endbower*/
+@import "vars";
+@import "font";
+@import "rest";
+@import "girdsystem";
+/*
+@mixin onsmall{
+  @media screen and(max-width: $small){
+    @content;
+  }
+}*/
+
+%hidetext{
+  width:1px;
+  height:1px;
+  position:absolute;
+  top:0;
+  left:0;
+  overflow:hidden;
+}
+
+%jiantou{
+  position: absolute;
+    text-align: center;
+    overflow: hidden;
+    color: #666;
+    border-radius:5px;
+    display: block;
+    font-size: 100px;
+    font-style: thin;
+    font-weight:1;
+    line-height: 228px;
+    margin-top: -94px;
+    top:50%;
+    width:67px;
+    height:228px;
+    cursor: pointer;
+}
+
+
+#globalnav{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  min-height:44px;
+  background:#000;
+
+}
+
+#globalnav .gn-content{
+  max-width: 980px;
+  margin:0 auto;
+  padding:0 22px;
+}
+#globalnav{
+  .gn-list{
+    height:44px;
+    text-align: justify;
+      &::after{
+        @extend %clear;
+        content:'';
+        width:100%;
+        display: inline-block;
+
+      }
+      .gn-item{
+        height:44px;
+        display: inline-block;
+      }
+      .gn-item span{
+        @extend %hidetext;
+
+      }
+    }
+
+  
+  .gn-link{
+    padding:0 10px;
+    height:44px;
+    display: block;
+
+  }
+
+  $nav-list:(
+    logo:20px,
+    mac:31px,
+    ipad:30px,
+    iphone:48px,
+    watch:44px,
+    tv:20px,
+    music:40px,
+    support:57px,
+    search:20px,
+    shopping:18px,
+    );
+  @each $nav in map_keys($nav-list){
+    .gn-#{$nav} a{
+      width:map_get($nav-list,$nav);
+      background: url($image-path + $nav + '.svg') center center no-repeat;
+    }
+  }
+}
+
+
+#globalnav{
+  .gn-header{
+    position: relative;
+    display: none;
+    height:48px;
+    @media screen and(max-width:$small){
+      display:block;
+    }
+    
+
+    .gn-item{
+      width:48px;
+      height:48px;
+    }
+    .gn-button{
+      position: absolute;
+      top:0;
+      left:0;
+      label{
+        position: absolute;
+        top:0;
+        left:0;
+        height:48px;
+        width:48px;
+      }
+    }
+    .gn-apple{
+      position: absolute;
+      top:0;
+      left:0;
+      right:0;
+      margin:auto;
+      background: url(/images/apple1.svg) center center no-repeat;
+    }
+    .gn-bag{
+      position: absolute;
+      top:0;
+      right:0;
+      background: url(/images/shopping1.svg) center center no-repeat;
+    }
+
+  }
+  @media screen and(max-width:$small){
+       .gn-list{
+        position: absolute;
+        top:68px;
+        width: 100%;
+        left:0;
+        box-sizing: border-box;
+        height:auto;
+        padding: 0 78px;
+        visibility: hidden;
+        background:#000;
+        z-index: 10000000000;
+
+        .gn-item{
+          /*display: inline-block;*/
+          transition: transform .3s ease;
+         /* @include onsmall{*/
+            display: block;
+            border-bottom: 1px solid #fff;
+            transform:scale(1.2,1.2) translateY(-18px);
+            opacity: 0;
+        }
+      }
+    }
+  
+}
+
+.gn-header{
+  .ac-gn{
+    transform: rotate(0);
+    z-index:2000000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 48px;
+    height: 48px;
+    .shang{
+      display: block;
+      width: 17px;
+      height: 1px;
+      background: #fff;
+      position: absolute;
+      left: 16px;
+      z-index:12222222222222;
+      top:23px;
+      transition: transform 0.2s 0.2s;
+      transform: translateY(-3px);
+    }
+    .xia{
+      display: block;
+      width: 17px;
+      height: 1px;
+      background: #fff;
+      position: absolute;
+      left: 16px;
+      z-index: 1;
+      bottom:19px;
+      transition: transform 0.2s;
+      transform: translateY(-3px);
+    }
+    
+  }
+  }
+
+
+ #xiala:checked+ .gn-content .gn-button{
+  .shang{
+    transform: rotateZ(45deg);
+  }
+  .xia{
+    transform: rotateZ(-45deg);
+  }
+}
+
+@media screen and(max-width: $small){
+  #xiala:checked ~ #globalnav .gn-content{
+    height:600px;
+    .gn-list{
+      visibility: visible;
+    }
+    .gn-list .gn-item{
+      opacity: 1;
+      transform:translateY(0) scale(1,1);
+    }
+
+    @for $i from 1 through 10{
+      .gn-list .gn-item:nth-child(#{$i}){
+        transition: transform .6s $i*0.05s ease;
+
+      }
+    }  
+
+  }
+}
+
+.hero-gallery{
+  height:78%;
+  min-height: 650px;
+  position: relative;
+  .dotnav{
+    position: absolute;
+    height:8px;
+    left: 0;
+    bottom:2%;
+    width: 100%;
+    z-index:8;
+    text-align: center;
+    cursor: pointer; 
+
+  }
+}
+.hero-gallery{
+  position: relative;
+}
+.baodian { 
+  margin-left: -51px; 
+  position: absolute; 
+  left: 50%; 
+  bottom: 4px; 
+  cursor: pointer;
+ } 
+ .baodian li { 
+  background:rgb(153,153,153); 
+  border-radius: 50%; 
+  color: #fff; 
+  cursor: pointer; 
+  margin: 0 2px; 
+  overflow: hidden; 
+  text-align: center; 
+  display: inline-block; 
+  height: 8px; 
+  line-height: 18px; 
+  width: 8px; 
+  font-size: 0;
+  a{
+    display: block;
+  }
+ } 
+ .baodian .baodian-item-selected { 
+  background: blue; 
+  height:8px;
+  width:8px;
+  background: #fff;
+  border:1px solid #08c;
+  cursor: pointer;
+
+ }
+.jiantou{
+    
+  display: block;
+}
+ .data-ac-next { 
+    @extend %jiantou;
+    right:18px; 
+    &::after {
+      content: ">";
+    }
+ }
+  .data-ac-pre { 
+    @extend %jiantou;
+    left:18px; 
+
+    &::after {
+      content: "<";
+    }
+
+ }
+ .data-ac-pre, .data-ac-next { 
+  z-index: 100008; 
+ } 
+
+section:nth-child(1){
+
+  .product-pro2{
+    background: url(../images/iphone_se.png)center center no-repeat;
+  }
+
+  .hero-image-inner2{
+    background: url(../images/iphone_6s_medium1.jpg)center center no-repeat;
+    background-size: 1310px 541px;
+    background-size: 1310px 541px;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    width: 1310px;
+    height: 541px;
+    overflow: visible;
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: -408px;
+    right: -707px;
+  }
+
+}
+
+section:nth-child(2){
+
+  .product-pro2{
+    background: url(../images/ipad_pro_medium.png)center center no-repeat;
+  }
+  .hero-image-inner2{
+    background: url(../images/ipad_pro_family_medium.jpg)center center no-repeat;
+    background-size: 1310px 541px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    width: 1310px;
+    height: 541px;
+    overflow: visible;
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: -450px;
+    right: -707px;
+
+  }
+
+}
+section:nth-child(3){
+
+  .product-pro2{
+    background: url(../images/watch_medium.png)center center no-repeat;
+
+  }
+  .hero-image-inner2{
+    background: url(../images/apple_watch_trio_medium.jpg)center center no-repeat;
+    background-size: 671px 341px;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    width: 671px;
+    height: 341px;
+    overflow: visible;
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: -204px;
+    right: -336px;
+
+  }
+}
+.hero-gallery-item2{
+  top:0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: #fff;;
+
+  .hero-content2{
+        vertical-align: middle;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: auto;
+        right: auto;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 6;
+      .backing-link2{
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: auto;
+            right: auto;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            z-index: 3;
+      }
+    .copy2{
+          left: 50%;
+          top: auto;
+          vertical-align: bottom;
+          height: 63%;
+          position: absolute;
+          width:800px;
+          right:auto;
+          bottom:auto;
+          overflow: visible;
+
+      &::before2{
+          content: ' ';
+          display: inline-block;
+          clear:both;
+
+      }
+
+      .copy-inner2{
+        padding-bottom: 170px;
+        vertical-align: bottom;
+        top:100px;
+        left: -50%;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        z-index: 100;
+
+
+        .product-pro2{
+              background-size: 139px 37px;
+              height: 37px;
+              width: 139px;
+              margin-left: auto;
+              margin-right: auto;
+              margin-bottom: 0.25em;
+              overflow: hidden;
+              text-indent: 100%;
+              white-space: nowrap;
+              background-repeat: no-repeat;
+              font-size: 64px;
+              line-height: 1.0625;
+              font-weight: 200;
+              letter-spacing: -0.02em;
+        }
+      }
+      &::after{
+          content: ' ';
+          display: inline-block;
+          }
+    }
+  }
+}
+%zong{
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.product-text2{
+    font-size: 32px;
+    line-height: 1.125;
+    font-weight: 400;
+    font-family: 'thin';
+    letter-spacing: normal;
+     margin-top: 0;
+    margin-bottom: 0.5em;
+    z-index: 1000;
+}
+
+.copy2 .links2{
+      font-size: 24px;
+    line-height: 1.3375;
+    font-weight: 300;
+    letter-spacing: normal;
+
+  li{
+    display:inline-block;
+    margin-bottom: 0.2em;
+    margin-right: 0.35em;
+    margin-left: 0.35em;
+
+    a{
+      color:#57B0DD;
+      font-size: 24px;
+      line-height: 1.3375;
+      font-weight:400;
+      letter-spacing: normal;
+      @extend %zong;
+      text-align: center;
+      font-family: 'thin';
+
+    }
+    span{
+      @extend %zong;
+      &::after{
+        content:'';
+        display: inline-block;
+        clear:both;
+      }
+
+    }
+  }
+}
+
+.hero-wrapper2{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    .hero-image2{
+      position: absolute;
+      bottom: auto;
+      right: auto;
+      left: 0;
+      top: 0;
+      min-width: 203px;
+      min-height: 228px;
+      width: 50%;
+      height: 50%;
+    }
+}
+
+.ac-gallery2{
+  @media screen and (max-width: $small){
+  section:nth-child(1){
+
+  .product-pro2{
+    background: url(../images/iphone_6s_small.png)center center no-repeat;
+  }
+
+  .hero-image-inner2{
+    background: url(../images/iphone_6s_small1.jpg)center center no-repeat;
+    background-size: 540px 150px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    width: 540px;
+    height: 150px;
+    overflow: visible;
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: -122px;
+    right: -252px;
+  }
+  .product-text2{
+    font-size: 20px;
+    line-height: 1.3375;
+    font-weight: 300;
+    letter-spacing: normal;
+}
+
+}
+
+section:nth-child(2){
+
+  .product-pro2{
+    background: url(../images/ipad_pro_small.png)center center no-repeat;
+  }
+  .hero-image-inner2{
+    background: url(../images/ipad_pro_family_small.jpg)center center no-repeat;
+    background-size: 440px 182px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    width: 440px;
+    height: 182px;
+    overflow: visible;
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: -144px;
+    right: -238px;
+  }
+    .product-text2{
+    font-size: 20px;
+    line-height: 1.3375;
+    font-weight: 300;
+    letter-spacing: normal;
+}
+
+
+}
+section:nth-child(3){
+
+  .product-pro2{
+    background: url(../images/watch_small.png)center center no-repeat;
+
+  }
+  .hero-image-inner2{
+    background: url(../images/apple_watch_trio_small.jpg)center center no-repeat;
+    background-size: 263px 134px;
+    height: 134px;
+    width: 263px;
+    overflow: visible;
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: -94px;
+    right: -132px;
+  }
+    .product-text2{
+    font-size: 20px;
+    line-height: 1.3375;
+    font-weight: 300;
+    letter-spacing: normal;
+}
+
+}
+
+}
+}
+
+/*.hero-gallery{
+  @media screen and(max-width: $small){
+    min-height:450px;
+  }
+}*/
+
+
+
+%hidetext{
+  position:absolute;
+  top:0;
+  left:0;
+  width:1px;
+  height:1px;
+  overflow: hidden;
+}
+
+.aside{
+  position: relative;
+  &::after{
+    @extend %clear;
+  }
+  span{
+    @extend %hidetext;
+  }
+}
+
+.aside li{
+  float:left;
+  width:25%;
+  height:200px;
+  @media screen and (max-width:$medium){
+    width:50%;
+  }
+  @media screen and (max-width:$small){
+    width:100%;
+  }
+}
+.aside li a{
+  display: block;
+  background-position:center center;
+  background-repeat: no-repeat;
+  height:200px;
+  background-size: 360px 200px;
+  @media screen and (max-width: $medium){
+    background-size:640px 200px;
+  }
+  @media screen and (max-width: $small){
+    background-size:736px 200px;
+  }
+}
+
+$items:iphone_6s,apple_tv,macbook,accessories;
+
+@for $i from 1 through 4{
+  .aside li:nth-child(#{$i}) a{
+    background:url("../images/"+nth($items,$i)+'_large.jpg')center center no-repeat;
+    @media screen and (max-width: $medium){
+      background:url("../images/"+nth($items,$i)+'_medium.jpg')center center no-repeat;
+    }
+    @media screen and (max-width: $small){
+      background:url("../images/"+nth($items,$i)+'_small.jpg')center center no-repeat;
+    }
+  }
+}
+
+.banner-wrapper{
+  text-align: center;
+
+
+  .redcross-banner{
+        position: relative;
+    display: inline-block;
+    padding: 20px 0;
+
+
+
+    .image-logo{
+          background-repeat: no-repeat;
+    background-size: 179px 44px;
+    height: 44px;
+    width: 179px;
+    background-image: url("../images/redcross_banner_large.jpg");
+    position: absolute;
+    top:13px;
+    display: block;
+    margin:0;
+    padding:0;
+
+    .american{
+          position: absolute;
+    top: 0;
+    left: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0;
+    }
+    }
+    .redcross-copy{
+          margin-left: 202px;
+    /*display: inline-block;*/
+    border-left: 1px solid #d6d6d6;
+    padding-left: 22px;
+    font-size: 22px;
+      /*color:#08c;*/
+      font-family: 'thin';
+      /*line-height: 50px;*/
+
+    .help{
+      margin-left: 4px;
+      font-size: 22px;
+      color:#08c;
+      font-family: 'normal';
+
+        &::after{
+      clear:both;
+      display: block;
+      content: '';
+    }
+    }
+    }
+  }
+}
+
+.banner-wrapper{
+  text-align: center;
+
+  @media screen and(max-width: $small){
+    .redcross-banner{
+      position: relative;
+    display: inline-block;
+    padding: 20px 0;
+
+    .image-logo{
+          background-repeat: no-repeat;
+    background-size: 179px 44px;
+    height: 44px;
+    width: 179px;
+    background-image: url("../images/redcross_banner_large.jpg");
+    display: block;
+        position: relative;
+    top: auto;
+    transform: none;
+    margin: 0 auto 4px;
+    }
+
+    .redcross-copy{
+          margin-left: 0;
+    border-left: 0;
+    padding-left: 0;
+    display: block;
+
+    .help{
+          display: block;
+    margin-left: 0;
+    }
+    }
+    }
+  }
+}
+
+
+
+
+#footer{
+  background: #f2f2f2;
+  margin-top: 30px;
+
+  .footer-inner{
+      &::after{
+    @extend %clear;
+  }
+    max-width:980px;
+    margin:0 auto;
+    padding:0 22px;
+  }
+  input{
+    display: none;
+    }
+  
+  
+}
+
+
+#footer nav .section ul{
+  @media screen and(max-width: $small){
+    display:none;
+  }
+}
+
+
+#footer nav .section{
+  @media screen and(max-width: $small){
+  border-bottom: 1px solid #e3e3e3;
+  }
+}
+
+#footer nav .section h2{
+  font-family:'normal';
+  font-size:14px;
+  position: relative;
+  @media screen and(max-width: $small){
+    height:40px;
+    border-bottom: none;
+    line-height: 40px;
+    font-size:14px;
+    font-family: 'extrathin';
+
+    &::after{
+      content:'+';
+      display: block;
+      position: absolute;
+      top:0;
+      right:20px;
+      bottom:0;
+    }
+
+  }
+
+}
+.section ul li{
+      font-family: 'thin';
+      font-size: 12px;
+      height:20px;
+      line-height: 20px;
+      @media screen and(max-width: $small){
+        height:30px;
+        line-height: 30px;
+      }
+}
+
+@media screen and(max-width:$small){
+$ids:shop,find,education,education1,manage,manage1about;
+  @each $id-name in $ids{
+    ##{$id-name}{
+    display:none;
+    &:checked + .section ul{
+      display:block;
+      }
+
+    &:checked + .section h2::after{
+      transform:rotateZ(45deg);
+      transition:all .5s ease;
+      }
+    }
+  }
+  
+}
+
+@for $i from 5 through 10{
+  .with-#{$i}-col .col{
+    float:left;
+    position: relative;
+    width: percentage(1/$i)
+  }
+}
+@media screen and(max-width: map_get($rules,'small')){
+  @for $i from 5 through 10{
+    .with-#{$i}-col .col{
+      width:100%;
+    }
+  }
+}
+
+
+
+.ac-fotter{
+      color: #999;
+    padding: 20px 0 24px;
+    width:980px;
+    margin:0 auto;
+
+
+    .ac-fotter-shop{
+          max-height: 9999px;
+    margin-bottom: 6px;
+    padding-bottom: 5px;
+        border-bottom: 1px solid #e3e3e3;
+        font-size: 14px;
+        font-family: 'thin';
+
+        a{
+          color:#08c;
+          font-size: 14px;
+        font-family: 'thin';
+        }
+        .wrap{
+              white-space: nowrap;
+              font-size: 14px;
+        font-family: 'thin';
+        }
+    }
+
+
+    .ac-fotter-local{
+      float: right;
+    white-space: nowrap;
+
+    .qi{
+          border-left: none;
+    margin-left: 0;
+    padding-left: 0;
+    font-size: 14px;
+    font-family: 'thin';
+    color:#000;
+
+    span{
+          background-repeat: no-repeat;
+    background-size: 16px 16px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url("../images/qi.png");
+    padding-right: 5px;
+    background-position: left center;
+    cursor: pointer;
+    float: left;
+    margin-top: 1px;
+    }
+    }
+    }
+
+    .ac-fotter-legal{
+          &::after{
+            box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+    pointer-events: auto;
+    letter-spacing: normal;
+  }
+
+  .ac-gf{
+    margin-right: 26px;
+    float: left;
+    font-size: 14px;
+    }
+
+    .jieshu{
+      display:block;
+      float:left;
+
+    a{
+    border-right: 1px solid #d6d6d6;
+    margin-right: 8px;
+    padding-right:8px;
+    white-space: nowrap;
+    font-size: 14px;
+    font-family: 'thin';
+    color:#000;
+    }
+    }
+  }
+}
+
+
+.ac-fotter{
+  padding:0 22px;
+  @media screen and(max-width: $small){
+    .ac-fotter-shop{
+      border-bottom:none;
+      margin-bottom: 6px;
+    }
+
+    .ac-fotter-local{
+      float: none;
+      position: relative;
+      z-index: 1;
+      white-space: nowrap;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .ac-fotter-legal{
+      margin-bottom: 3px;
+      font-size: 12px;
+      font-weight: 400;
+      font-family: 'bold';
+      &::after{
+        box-sizing: content-box;
+        margin: 0;
+        padding: 0;
+        pointer-events: auto;
+        letter-spacing: normal;
+      }
+
+      .ac-gf{
+        display: block;
+        float:none;
+      }
+
+      .jieshu{
+        display:block;
+
+        a{
+          font-family: 'thin';
+        }
+      }
+    }
+  }
+}
